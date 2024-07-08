@@ -1,0 +1,66 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 15s ease infinite;
+}
+
+/* Custom font class */
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Custom text colors for better readability */
+.text-primary {
+  color: #3241e9; /* White */
+}
+
+.text-secondary {
+  color: #3241e9; /* Light Gray */
+}
+
+/* Add custom styles */
+.club-card {
+  width: 300px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  perspective: 1000px;
+}
+
+.club-card:hover .club-card-content {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+.club-card-content {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+}
+
+.club-card-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1); /* Overlay color */
+  backdrop-filter: blur(10px);
+  border-radius: 0.5rem;
+}
+/* Additional styles */
+.bg-opacity-80 {
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(8px); /* Adjust blur intensity */
+}
